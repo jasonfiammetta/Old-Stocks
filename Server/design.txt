@@ -1,0 +1,29 @@
+Long overdue design doc
+
+This is a server used to connect to TDA via the tda-api-client library. It uses express routers to field requests from a front end that is also in development, but it is meant to be capable of implementing trading strategies on its own.
+
+These trading strategies are achieved through the 'brain' of the server, which essentially represents a trader constantly looking at the market and making decisions based on the market and on the principal amount it's given control of.
+
+The brain is made up of the accountant, logger, and strategies
+The Accountant is given a balance it is allowed to use for trading, and keeps track of the current portfolio, and current net liquidity. It is also told a maximum drawdown balance at which it is expected to close all positions.
+The Logger simply records all that happens throughout the day. It can list all trades that were executed, and all stock data it received, together or separately.
+Strategies have access to the stock data, and keep track of their own mini portfolios.
+// They negotiate with the Accountant based on their success rates and confidence to determine what percent of the portfolio they're allowed to control.
+They tell the Accountant what trades to make, what securities to buy and sell, and in what quantities.
+
+Ideal daily loop:
+7 am? Check if equity market is open today
+9 am? Begin recording data at 5 second intervals?
+9:30 am Begin trading
+If max drawdown for day has been reached, stop trading
+4 pm Stop trading
+4:30 pm? stop recording
+Archive file for backtesting
+
+Ideal trading loop:
+- Receive data from every stock on stockList
+- Check if any outstanding working orders have been filled
+- Update Accountant with new prices and orders and portfolio
+- Give new data to strategies
+- Strategies decide if more orders should be sent
+- Accountant sends orders

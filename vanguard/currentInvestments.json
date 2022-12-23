@@ -1,0 +1,28 @@
+{
+  "Investments": ["VFIAX", "VMGRX", "VTTSX", "VWINX"],
+  "Quantities": {
+    "TotalInvestments": {
+      "VTTSX": 258.487,
+      "VFIAX": 38.979,
+      "VMGRX": 111.835,
+      "VWINX": 130.57
+    },
+    "BrokerageAccount": {
+      "VFIAX": 14.110,
+      "VMGRX": 111.835,
+      "VWINX": 130.57,
+      "VTTSX": 244.645
+    },
+    "RothIraInvestments": {
+      "VFIAX": 24.869
+    },
+    "RetirementInvestments": {
+      "VTTSX": 258.487
+    },
+    "LiquidCash": {
+      "VFIAX": 14.110,
+      "VMGRX": 111.835,
+      "VWINX": 130.57
+    }
+  }
+}

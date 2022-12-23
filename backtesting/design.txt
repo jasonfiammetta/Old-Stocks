@@ -1,0 +1,19 @@
+Backtesting
+
+A datasource will spew stock info at the server. The server must be able to keep up with the rate of data.
+The data will contain the current mark price of stocks in the stockList.
+The point of backtesting is to determine the efficacy of a Strategy.
+The Accountant will keep track of all the Strategy's performances and print a summary for each at the end.
+The Strategies have one or more Portfolios for the Accountant
+A Strategy can produce Trades; a Trade is a buy or sell order, market or limit. (TODO: implement stops)
+(TODO: Trades can cost Fees. These fees are based on the number of shares and also the total value)
+
+
+Timeline
+
+New data arrives;
+The Accountant uses the new data to evaluate the new worth of all Portfolios;
+The Accountant executes outstanding trades;
+Each Strategy uses the new data to calculate its next move;
+Strategies which choose to buy or sell inform the Accountant by passing a Trade;
+The Accountant

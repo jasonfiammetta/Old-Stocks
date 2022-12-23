@@ -1,0 +1,36 @@
+Go to
+https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost&client_id=BMTA7LEFQHZGFMO7ADDEXF2G4PQ3FGFG@AMER.OAUTHAP
+log in
+hit allow
+take string after 'code=' in url
+decodeURI(that string)
+then go to
+https://developer.tdameritrade.com/authentication/apis/post/token-0
+input
+```
+grant_type: authorization_code
+// refresh_token: (leave blank)
+access_type: offline
+code: decoded string
+client_id: BMTA7LEFQHZGFMO7ADDEXF2G4PQ3FGFG@AMER.OAUTHAP
+redirect_uri: http://localhost
+```
+receive:
+{
+  "access_token": "",
+  "refresh_token": "",
+  "scope": "PlaceTrades AccountAccess MoveMoney",
+  "expires_in": 1800,
+  "refresh_token_expires_in": 7776000,
+  "token_type": "Bearer"
+}
+replace refresh_token everywhere it needs to be replaced (tdaclientauth.json)
+```find . -name 'tdaclientauth.json'```
+```find . -type d -name node_modules -prune -o -name 'tdaclientauth.json' -print```
+```
+for file in $(find . -type d -name node_modules -prune -o -name 'tdaclientauth.json' -print)
+do
+  cat $file
+done
+```
+make note of date in 90 days (7776000 seconds), repeat before then

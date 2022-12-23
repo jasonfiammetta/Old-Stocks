@@ -1,0 +1,52 @@
+accounts
+  getAccount
+  getAccounts
+authentication
+  getAuthentication
+  refreshAuthentication
+instruments
+  getInstrument **
+  searchInstrument **
+markethours
+  getSingleMarketHours **
+  getMultipleMarketHours **
+movers
+  getMovers **
+optionchain
+  getOptionChain **
+orders
+  placeOrder
+  replaceOrder
+  cancelOrder
+  getOrder
+  getOrdersByAccount
+  getOrdersByQuery
+pricehistory
+  getPriceHistory **
+quotes
+  getQuote **
+  getQuotes **
+savedorders
+  createSavedOrder
+  deleteSavedOrder
+  getSavedOrderById
+  getSavedOrders
+  replaceSavedOrder
+transactions
+  getTransaction
+  getTransactions
+userinfo
+  getUserPreferences
+  getStreamerSubKeys
+  getUserPrincipals
+  updateUserPreferences
+watchlists
+  createWatchlist
+  deleteWatchlist
+  getWatchlist
+  getWatchlistsSingleAcct
+  getWatchlistsMultiAcct
+  replaceWatchlist
+  updateWatchlist
+
+** indicates unauthenticated requests are possible

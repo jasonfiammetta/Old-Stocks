@@ -1,0 +1,20 @@
+TODO
+
+Important:
+Accounts
+Authentication
+Orders
+Transactions
+Quotes
+
+Mild:
+User Info - streaming keys
+Option Chain
+Market Hours
+Price History?
+
+Don't care:
+Instruments
+Watchlists?
+Saved Orders
+Movers

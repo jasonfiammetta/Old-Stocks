@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "tda-api-client": "^1.1.2"
+  }
+}

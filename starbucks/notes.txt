@@ -1,0 +1,19 @@
+Build a strategyBuilder?
+Does a strategy need to know about orders and such
+Do I need an OrderList class
+Maybe a strategy should just say { idealQuantity: } and let a handler of some kind determine what orders are necessary to bring the quantity owned in line. Maybe percent of portfolio instead of quantity.
+
+const sim = function() {
+  timeManager.start()
+  while(dataSource.hasNext()) {
+    timeManager.tick()
+    stockData = dataSource.next()
+    orderManager.fillWorkingOrders(stockData)
+    accountManager.updateAccountOrders(orderManager)
+    accountManager.updateStockPrices(stockData)
+    indicatorManager.updateIndicators(stockData)
+    strategyManager.updateStrategies(indicatorManager, stockData)
+    orderManager.updateWorkingOrders(strategyManager)
+  }
+  timeManager.end()
+}
