@@ -63,5 +63,5 @@ tda.accounts.getAccounts({ fields: 'positions,orders' })
       .catch(console.error)
   })
   .catch(e => {
-    console.log("Error: could not get account. ", e)
+    console.error("Error: could not get account. ", e)
   })
