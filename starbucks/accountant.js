@@ -1,7 +1,6 @@
 // Accountant, keeper of money and portfolio
 class Accountant {
-  constructor(currentState) {
-    if(!currentState) { currentState = {} }
+  constructor(currentState = {}) {
     this.cash = currentState.cash || 10000 // availableCash? cash and sweep vehicle?
     this.portfolio = currentState.portfolio || {}
     this.netLiquidity = currentState.netLiquidity || this.cash
