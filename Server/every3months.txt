@@ -3,7 +3,7 @@ https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=http%3A%2F%2F
 log in
 hit allow
 take string after 'code=' in url
-decodeURI(that string)
+decodeURIComponent(that string)
 then go to
 https://developer.tdameritrade.com/authentication/apis/post/token-0
 input
