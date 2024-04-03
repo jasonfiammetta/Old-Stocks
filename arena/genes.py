@@ -17,3 +17,9 @@ class Genes:
 
     def random_string(self):
         return ''.join([random.choice(ALPHABET) for _ in range(GENE_LENGTH)])
+    
+    def __str__(self) -> str:
+        return self.gene
+    
+    def __repr__(self) -> str:
+        return self.gene

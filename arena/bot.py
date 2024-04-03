@@ -1,13 +1,14 @@
 from genes import Genes
+from grid import Grid
 
 
 COST_OF_LIVING = 1 # Money drain
 DEATH_THRESHOLD = 100
 
 class Bot:
-    def __init__(self, loc):
+    def __init__(self, loc = None):
         self.genes = Genes() # seed?
-        self.loc = loc
+        self.loc = loc or Grid.get_random_loc()
         self.life = 1000 # money
         self.age = 0
 
@@ -29,13 +30,13 @@ class Bot:
         pass
 
     def die(self):
-        print(self.stats())
+        print('dead', self.stats())
         self.give_back_money()
 
     def stats(self):
-        return dict(
-            self.age,
-            self.genes,
-            self.loc,
-            self.life
-        )
+        return {
+            'age': self.age,
+            'genes': self.genes,
+            'location': self.loc,
+            'life': self.life
+        }
