@@ -8,9 +8,11 @@ DEATH_THRESHOLD = 100
 class Bot:
     def __init__(self, loc = None):
         self.genes = Genes() # seed?
-        self.loc = loc or Grid.get_random_loc()
+        # self.loc = loc or Grid.get_random_loc()
+        self.loc = loc or Grid.get_origin()
         self.life = 1000 # money
         self.age = 0
+        self.alive = True
 
     def act(self):
         # do nothing 
@@ -27,10 +29,12 @@ class Bot:
             self.die()
 
     def give_back_money(self):
+        # liquidate holdings and free cash
         pass
 
     def die(self):
         print('dead', self.stats())
+        self.alive = False
         self.give_back_money()
 
     def stats(self):
@@ -38,5 +42,6 @@ class Bot:
             'age': self.age,
             'genes': self.genes,
             'location': self.loc,
-            'life': self.life
+            'life': self.life,
+            'alive': self.alive,
         }

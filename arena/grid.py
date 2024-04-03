@@ -19,11 +19,7 @@ class Grid:
 
     @staticmethod
     def get_random_loc():
-        loc = []
-        for i in range(GRID_SIZE):
-            loc.append(random.randint(-MAX_STOCK_NUM, MAX_STOCK_NUM))
-        return loc
-        # return [random for x in range(GRID_SIZE)]
+        return [random.randint(-MAX_STOCK_NUM, MAX_STOCK_NUM) for x in range(GRID_SIZE)]
 
     def calc_spot(self, loc):
         sum = 0
@@ -34,6 +30,7 @@ class Grid:
     def step(self):
         self.time += 1
         for bot in self.bots:
+            bot.act()
             value = self.calc_spot(bot.loc)
             bot.live(value)
 
