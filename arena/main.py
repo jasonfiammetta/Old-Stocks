@@ -1,10 +1,18 @@
+from bank import Bank
+from grid import Grid
+from bot import Bot
+
 csv = '.csv'
 stock_list = [] # derive from csv
 stocks = 11 # len(stockList)
 
-bots = 1 # 1000
+bot_num = 1 # 1000
+bots = []
 stock_list = ['SPY'] # test
 initial_money = 10000
 
-bank = new Bank(initial_money)
-grid = new Grid(stocks, bots)
+for i in range(bot_num):
+    bots.append(Bot())
+
+bank = Bank(initial_money)
+grid = Grid(stocks, bots)

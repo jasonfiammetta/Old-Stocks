@@ -1,16 +1,22 @@
+from genes import Genes
+
 
 COST_OF_LIVING = 1 # Money drain
+DEATH_THRESHOLD = 100
 
 class Bot:
     def __init__(self, loc):
-        self.genes = new Genes() # seed?
+        self.genes = Genes() # seed?
         self.loc = loc
         self.life = 1000 # money
         self.age = 0
 
     def act(self):
-        # do nothing
+        # do nothing 
+        # or
         # move to new location
+        # genes decide
+        pass
 
     def live(self, gain):
         self.life -= COST_OF_LIVING
@@ -19,11 +25,14 @@ class Bot:
         if self.life < DEATH_THRESHOLD:
             self.die()
 
+    def give_back_money(self):
+        pass
+
     def die(self):
         print(self.stats())
-        give_back_money()
+        self.give_back_money()
 
-    def stats():
+    def stats(self):
         return dict(
             self.age,
             self.genes,

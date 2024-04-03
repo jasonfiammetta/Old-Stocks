@@ -4,4 +4,5 @@ class Bank:
         self.money = money
         self.debtors = bots
 
-    def reclaim:
+    def reclaim(self):
+        pass
