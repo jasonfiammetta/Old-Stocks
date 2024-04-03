@@ -5,3 +5,6 @@ tdaclientauth.json
 tmpData/
 
 *.pem
+
+__pycache__/
+*.py[cod]
