@@ -8,3 +8,4 @@ tmpData/
 
 __pycache__/
 *.py[cod]
+arena/__pycache__/
